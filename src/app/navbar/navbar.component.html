@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarCenteredExample"
+      aria-controls="navbarCenteredExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div
+      class="collapse navbar-collapse justify-content-center"
+      id="navbarCenteredExample"
+    >
+      <!-- Left links -->
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active fs-4 text-black fw-bold" aria-current="page" routerLink="/customers">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 text-black fw-bold" routerLink="/accounts">Accounts</a>
+        </li>
+        <!-- Navbar dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fs-4 text-black fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Customers
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/customers">Search customers</a></li>
+            <li><a class="dropdown-item" routerLink="/new-customer">New customer</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>

@@ -1,0 +1,76 @@
+<!--<div class="container mt-3">
+  <ng-container *ngIf="customerAccounts | async as listAccounts; else failureOrLading">
+    <div class="card">
+      <div class="card-header fw-bold text-md-center">Customers</div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th><th>Balance</th><th>Type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let c of customerAccounts | async">
+            <td>{{c.id}}</td>
+            <td>{{c.balance}}</td>
+            <td>{{c.type}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #failureOrLading>
+    <ng-container *ngIf="errorMessage; else loading">
+      <div class="text-danger">
+        {{errorMessage}}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading .....
+    </ng-template>
+  </ng-template>
+</div>-->
+
+
+
+<div class="container mt-5">
+  <ng-container *ngIf="customerAccounts | async as listAccounts; else failureOrLading">
+    <div class="card ">
+      <div class="card-header text-center bg-secondary fw-bold text-white">
+        <h3>Customer Accounts</h3>
+      </div>
+      <div class="card-body">
+        <table class="table text-center">
+          <thead>
+          <tr>
+            <th class="text-start">ID</th>
+            <th class="text-start">TYPE</th>
+            <th class="text-start">Balance</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let a of customerAccounts | async">
+            <td class="text-start">{{a.id}}</td>
+            <td class="text-start">{{a.type}}</td>
+            <td class="text-start">{{a.balance | number:'1.2-2'}}</td>
+            <td><a (click)="handleOperations(a.id)" class="btn btn-outline-warning">Operations</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #failureOrLading>
+    <ng-container *ngIf="errorMessage; else loading">
+      <div class="text-danger">
+        {{errorMessage}}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading .....
+    </ng-template>
+  </ng-template>
+</div>
+
